@@ -71,8 +71,6 @@ public class Donjon {
             }
         }
 
-        System.out.println("salut");
-
         Exit exit = new Exit("Exit");
         Shop shop = new Shop("Shop");
         linkRoom(exit, rooms);
