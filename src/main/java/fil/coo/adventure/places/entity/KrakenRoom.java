@@ -1,8 +1,9 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
 
 import fil.coo.adventure.entities.items.util.GoldChest;
 import fil.coo.adventure.entities.items.util.LifePotion;
 import fil.coo.adventure.entities.monsters.util.Kraken;
+import fil.coo.adventure.places.Room;
 
 public class KrakenRoom extends Room {
     public final static String name = "KrakenRoom";

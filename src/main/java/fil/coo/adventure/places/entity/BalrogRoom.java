@@ -1,12 +1,10 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
 
 import fil.coo.adventure.entities.items.util.StrengthPotion;
 import fil.coo.adventure.entities.monsters.util.Balrog;
+import fil.coo.adventure.places.Room;
 
 public class BalrogRoom extends Room {
-
-    public final static String name = "BalrogRoom";
-
     public BalrogRoom() {
         super();
         this.addMonster(new Balrog());
