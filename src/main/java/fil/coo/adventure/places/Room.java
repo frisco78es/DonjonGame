@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 
 import fil.coo.adventure.entities.GameCharacters;
+import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.monsters.Monster;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.places.directions.Direction;
@@ -81,7 +82,7 @@ public class Room {
 		return new String();
 	}
 
-	public void interact() {
-		// ceci est une salle normal
+	public void interact(Player player) {
+		System.out.println("It looks like nothing special can happen here");
 	}
 }
