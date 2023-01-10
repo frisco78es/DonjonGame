@@ -18,12 +18,22 @@ public class Room {
 	protected List<GameCharacters> deads;
 	protected List<Item> items;
 	protected Map<Direction, Room> neighbour;
+	public String name;
 	
 	public Room() {
 		this.monsters = new ArrayList<Monster>();
 		this.items = new ArrayList<Item>();
 		this.deads = new ArrayList<GameCharacters>();
 		this.neighbour = new HashMap<Direction, Room>();
+		this.name = "";
+	}
+
+	public Room(String name) {
+		this.monsters = new ArrayList<Monster>();
+		this.items = new ArrayList<Item>();
+		this.deads = new ArrayList<GameCharacters>();
+		this.neighbour = new HashMap<Direction, Room>();
+		this.name = name;
 	}
 
 	public void addMonster(Monster monster) {
@@ -87,7 +97,11 @@ public class Room {
 		System.out.println("It looks like nothing special can happen here");
 	}
 
-	private void chooseEmptyDirection() {
-		
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 }

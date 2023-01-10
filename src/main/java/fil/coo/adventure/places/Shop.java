@@ -5,6 +5,10 @@ import java.util.Scanner;
 import fil.coo.adventure.entities.Player;
 
 public class Shop extends Room {
+	public Shop(String name) {
+		super(name);
+	}
+
 	public void interact(Player player) {
 		System.out.println(
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");

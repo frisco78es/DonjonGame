@@ -1,60 +1,57 @@
 package fil.coo.adventure.places;
 
 public enum EnumRoom {
-        BALROGROM(new BalrogRoom(), 0.05) {
+        BALROG(0.05) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new BalrogRoom();
             }
         },
     
-        GOBLIN(new GoblinRoom(), 0.5) {
+        GOBLIN(0.5) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new GoblinRoom();
             }
         },
     
-        SLIME(new SlimeRoom(), 0.2) {
+        SLIME(0.2) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new SlimeRoom();
             }
         },
     
-        ORC(new OrcRoom(), 0.1) {
+        ORC(0.1) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new OrcRoom();
             }
         },
     
-        LOOTER(new LooterRoom(), 0.1) {
+        LOOTER(0.1) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new LooterRoom();
             }
         },
     
-        KRAKEN(new KrakenRoom(), 0.05) {
+        KRAKEN(0.05) {
     
             @Override
             public Room getRoom() {
-                return this.room;
+                return new KrakenRoom();
             }
         };
     
-        protected final Room room;
-    
         public final double coef;
     
-        EnumRoom(Room r, double c) {
-            this.room = r;
+        EnumRoom(double c) {
             this.coef = c;
         };
     

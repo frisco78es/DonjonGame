@@ -25,7 +25,15 @@ public enum Direction {
 	}
 	
 	public Direction opposite() {
-		// A compléter
-	    return Direction.S;
+		switch(this.name) {
+			case "north":
+				return Direction.S;
+			case "south":
+				return Direction.N;
+			case "east":
+				return Direction.W;
+			default:
+				return Direction.E;
+		}
 	}
 }
