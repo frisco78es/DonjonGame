@@ -10,12 +10,16 @@ public class AdventureGame {
 	private Room currentRoom;
 	private Player player;
 	
-	public AdventureGame(Room startingRoom) {
-		this.currentRoom = startingRoom;
+	public AdventureGame() {
+
 	}
 	
 	public Room currentRoom() {
 		return this.currentRoom;
+	}
+
+	public void setCurrentRoom(Room room) {
+		this.currentRoom = room;
 	}
 	
 	public Player getPlayer() {

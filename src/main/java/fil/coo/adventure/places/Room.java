@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import fil.coo.adventure.entities.GameCharacters;
@@ -65,7 +66,7 @@ public class Room {
 		return false;
 	}
 	
-	private void addNeighbour(Direction d, Room r) {
+	public void addNeighbour(Direction d, Room r) {
 		this.neighbour.put(d, r);
 	}
 	
@@ -84,5 +85,9 @@ public class Room {
 
 	public void interact(Player player) {
 		System.out.println("It looks like nothing special can happen here");
+	}
+
+	private void chooseEmptyDirection() {
+		
 	}
 }
