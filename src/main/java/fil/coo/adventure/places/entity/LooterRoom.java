@@ -1,11 +1,12 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
 
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.util.GoldChest;
 import fil.coo.adventure.entities.monsters.util.Looter;
+import fil.coo.adventure.places.Room;
 
 public class LooterRoom extends Room {
-    public LooterRoom () {
+    public LooterRoom() {
         super();
         this.addMonster(new Looter());
         this.addMonster(new Looter());

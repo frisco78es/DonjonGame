@@ -1,4 +1,6 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
+
+import fil.coo.adventure.places.Room;
 
 public enum EnumRoom {
     BALROGROM(new BalrogRoom(), 0.1) {
@@ -42,6 +44,14 @@ public enum EnumRoom {
     },
 
     LOOTER(new LooterRoom(), 0.1) {
+
+        @Override
+        public Room getRoom() {
+            return this.room;
+        }
+    },
+
+    ZOMBIEHORD(new ZombieHordRoom(), 0.1) {
 
         @Override
         public Room getRoom() {
