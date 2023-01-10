@@ -7,7 +7,7 @@ public class Exit extends Room {
 		super();
 		this.monsters.add(new Dragon());
 	}
-	
+
 	public boolean isExit() {
 		return true;
 	}
