@@ -1,9 +1,9 @@
-package fil.coo.adventure.entities.actions.util;
+git checkout -b package fil.coo.adventure.entities.actions.util;
 
 import fil.coo.adventure.places.Room;
 
 public class Look {
 	public boolean isPossible(Room r) {
-		return true;
+		return true;aaaaa
 	}
 }
