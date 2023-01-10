@@ -5,7 +5,9 @@ import fil.coo.adventure.entities.monsters.util.Goblin;
 import fil.coo.adventure.entities.monsters.util.Orc;
 
 public class OrcRoom extends Room {
-    public OrcRoom () {
+    public final static String name = "OrcRoom";
+
+    public OrcRoom() {
         super();
         this.addMonster(new Orc());
         this.addMonster(new Goblin());
