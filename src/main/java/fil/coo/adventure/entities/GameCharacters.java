@@ -36,6 +36,12 @@ public abstract class GameCharacters {
 	public void addGold(int g) {
 		this.gold += g;
 	}
+
+	public void removeGold(int g) {
+		if(!(this.gold - g < 0)) {
+			this.gold -= g;
+		}
+	}
 	
 	public void LooseLife(int st) {
 		this.LifePoints -= st;
