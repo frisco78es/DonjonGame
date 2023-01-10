@@ -9,6 +9,10 @@ public class Shop extends Room {
 		super(name);
 	}
 
+	public Shop() {
+		super("Shop");
+	}
+
 	public void interact(Player player) {
 		System.out.println(
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");
