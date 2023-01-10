@@ -4,7 +4,9 @@ import fil.coo.adventure.entities.items.util.GoldChest;
 import fil.coo.adventure.entities.items.util.LifePotion;
 import fil.coo.adventure.entities.monsters.util.Kraken;
 
-public class KrakenRoom extends Room{
+public class KrakenRoom extends Room {
+    public final static String name = "KrakenRoom";
+
     public KrakenRoom() {
         super();
         this.addMonster(new Kraken());
