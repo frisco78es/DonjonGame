@@ -7,6 +7,7 @@ public class SlimeRoom extends Room {
     public final static String name = "SlimeRoom";
 
     public SlimeRoom() {
+        super("Slime Room");
         this.addMonster(new Slime());
         this.addMonster(new Slime());
         this.addMonster(new Slime());

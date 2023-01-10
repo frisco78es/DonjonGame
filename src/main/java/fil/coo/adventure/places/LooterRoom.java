@@ -6,7 +6,7 @@ import fil.coo.adventure.entities.monsters.util.Looter;
 
 public class LooterRoom extends Room {
     public LooterRoom () {
-        super();
+        super("Looter Room");
         this.addMonster(new Looter());
         this.addMonster(new Looter());
         this.addMonster(new Looter());
