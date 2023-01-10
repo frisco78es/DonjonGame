@@ -24,6 +24,10 @@ public abstract class GameCharacters {
 	public int getStrength() {
 		return this.strength;
 	}
+
+	public void addStrength(int stg) {
+		this.strength += strength;
+	}
 	
 	public int getGold() {
 		return this.gold;
@@ -35,6 +39,10 @@ public abstract class GameCharacters {
 	
 	public void LooseLife(int st) {
 		this.LifePoints -= st;
+	}
+
+	public void RecoverLife(int st) {
+		this.LifePoints += st;
 	}
 	
 	public void attack(GameCharacters theOtherCharacterToAttack) {

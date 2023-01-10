@@ -80,4 +80,8 @@ public class Room {
 	public String toString() {
 		return new String();
 	}
+
+	public void interact() {
+		// ceci est une salle normal
+	}
 }
