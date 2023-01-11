@@ -14,6 +14,7 @@ public class Shop extends Room {
 	}
 
 	public void interact(Player player) {
+		this.explored = true;
 		System.out.println(
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");
 		System.out.println("You can either enter the shop or leave. What would you do ?");
@@ -53,8 +54,9 @@ public class Shop extends Room {
 				case "heal":
 					if (player.getGold() > 30) {
 						System.out.println("Thanks for buying a healing potion !");
+						System.out.println("SYS: 30 life points recovered.");
 						player.removeGold(30);
-						player.RecoverLife(10);
+						player.RecoverLife(30);
 					} else {
 						System.out.println("You don't have enough gold for that");
 					}
@@ -62,6 +64,7 @@ public class Shop extends Room {
 				case "strength":
 					if (player.getGold() > 50) {
 						System.out.println("Thanks for buying a strength potion !");
+						System.out.println("SYS: 5 Strength added to your character.");
 						player.removeGold(50);
 						player.addStrength(5);
 					} else {

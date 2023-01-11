@@ -1,7 +1,5 @@
 package fil.coo.adventure.entities.actions.util;
 
-import javax.swing.Action;
-
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.actions.Actions;
 import fil.coo.adventure.places.Room;
