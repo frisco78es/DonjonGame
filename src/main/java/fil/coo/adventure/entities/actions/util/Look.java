@@ -5,13 +5,13 @@ import fil.coo.adventure.places.Room;
 import java.util.List;
 
 import fil.coo.adventure.entities.GameCharacters;
+import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.entities.monsters.*;
 import fil.coo.adventure.entities.actions.Actions;
 
 public class Look implements Actions {
 
-	@Override
 	public void execute(Room r) {
 		List<Monster> monsters = r.getMonsters();
 		List<Item> items = r.getItems();
@@ -45,8 +45,7 @@ public class Look implements Actions {
 	}
 
 	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
+	public void execute(Room r, Player p) {
+		this.execute(r);
 	}
 }
