@@ -19,9 +19,9 @@ public class Shop extends Room {
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");
 		System.out.println("You can either enter the shop or leave. What would you do ?");
 		Boolean stay = true;
+		Scanner sc = new Scanner(System.in);
 		while (stay) {
 			System.out.println("ENTER / LEAVE ?");
-			Scanner sc = new Scanner(System.in);
 			String playerAnswer = sc.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "enter":
@@ -36,6 +36,7 @@ public class Shop extends Room {
 					break;
 			}
 		}
+		sc.close();
 	}
 
 	private void shop(Player player) {
@@ -44,11 +45,11 @@ public class Shop extends Room {
 		System.out.println("You find some healing potions, being trade for 30 golds.");
 		System.out.println("You find some stength potions, being trade for 50 golds.");
 		System.out.println("What would you do ?");
+		Scanner sc = new Scanner(System.in);
 		Boolean stay = true;
 		while (stay) {
 			System.out.println("Current gold amount: " + player.getGold() + "g");
 			System.out.println("HEAL / STRENGTH / LEAVE ?");
-			Scanner sc = new Scanner(System.in);
 			String playerAnswer = sc.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "heal":
@@ -80,5 +81,6 @@ public class Shop extends Room {
 					break;
 			}
 		}
+		sc.close();
 	}
 }

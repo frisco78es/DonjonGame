@@ -37,6 +37,10 @@ public abstract class GameCharacters {
 		this.gold += g;
 	}
 
+	public void setGold(int g) {
+		this.gold = g;
+	}
+
 	public void removeGold(int g) {
 		if(!(this.gold - g < 0)) {
 			this.gold -= g;

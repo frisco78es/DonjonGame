@@ -12,4 +12,8 @@ public class StrengthPotion extends Item {
 		System.out.println("SYS: 5 Strength added to your character.");
 	}
 
+	@Override
+	public String toString() {
+		return "Strength Potion";
+	}
 }
