@@ -1,7 +1,7 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
 
-import fil.coo.adventure.entities.items.util.LifePotion;
 import fil.coo.adventure.entities.monsters.util.Goblin;
+import fil.coo.adventure.places.Room;
 
 public class GoblinRoom extends Room {
     public GoblinRoom() {
@@ -10,6 +10,5 @@ public class GoblinRoom extends Room {
         this.addMonster(new Goblin());
         this.addMonster(new Goblin());
         this.addMonster(new Goblin());
-        this.addItem(new LifePotion());
     }
 }

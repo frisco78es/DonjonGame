@@ -18,6 +18,7 @@ public class Room {
 	protected List<Item> items;
 	protected Map<Direction, Room> neighbour;
 	public String name;
+	public Boolean explored = false;
 
 	public Room() {
 		this.monsters = new ArrayList<Monster>();
@@ -97,6 +98,7 @@ public class Room {
 
 	public void interact(Player player) {
 		System.out.println("It looks like nothing special can happen here");
+		this.explored = true;
 	}
 
 	public String getName() {
@@ -105,5 +107,9 @@ public class Room {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Boolean isExplored() {
+		return this.explored;
 	}
 }

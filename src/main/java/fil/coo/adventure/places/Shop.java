@@ -14,13 +14,14 @@ public class Shop extends Room {
 	}
 
 	public void interact(Player player) {
+		this.explored = true;
 		System.out.println(
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");
 		System.out.println("You can either enter the shop or leave. What would you do ?");
 		Boolean stay = true;
+		Scanner sc = new Scanner(System.in);
 		while (stay) {
 			System.out.println("ENTER / LEAVE ?");
-			Scanner sc = new Scanner(System.in);
 			String playerAnswer = sc.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "enter":
@@ -35,6 +36,7 @@ public class Shop extends Room {
 					break;
 			}
 		}
+		sc.close();
 	}
 
 	private void shop(Player player) {
@@ -43,18 +45,19 @@ public class Shop extends Room {
 		System.out.println("You find some healing potions, being trade for 30 golds.");
 		System.out.println("You find some stength potions, being trade for 50 golds.");
 		System.out.println("What would you do ?");
+		Scanner sc = new Scanner(System.in);
 		Boolean stay = true;
 		while (stay) {
 			System.out.println("Current gold amount: " + player.getGold() + "g");
 			System.out.println("HEAL / STRENGTH / LEAVE ?");
-			Scanner sc = new Scanner(System.in);
 			String playerAnswer = sc.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "heal":
 					if (player.getGold() > 30) {
 						System.out.println("Thanks for buying a healing potion !");
+						System.out.println("SYS: 30 life points recovered.");
 						player.removeGold(30);
-						player.RecoverLife(10);
+						player.RecoverLife(30);
 					} else {
 						System.out.println("You don't have enough gold for that");
 					}
@@ -62,6 +65,7 @@ public class Shop extends Room {
 				case "strength":
 					if (player.getGold() > 50) {
 						System.out.println("Thanks for buying a strength potion !");
+						System.out.println("SYS: 5 Strength added to your character.");
 						player.removeGold(50);
 						player.addStrength(5);
 					} else {
@@ -77,5 +81,6 @@ public class Shop extends Room {
 					break;
 			}
 		}
+		sc.close();
 	}
 }

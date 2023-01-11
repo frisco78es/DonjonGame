@@ -7,6 +7,13 @@ public class StrengthPotion extends Item {
 
 	@Override
 	public void isUsedBy(Player player) {
+		player.addStrength(5);
+		System.out.println("You drink the found potion.");
+		System.out.println("SYS: 5 Strength added to your character.");
 	}
 
+	@Override
+	public String toString() {
+		return "Strength Potion";
+	}
 }
