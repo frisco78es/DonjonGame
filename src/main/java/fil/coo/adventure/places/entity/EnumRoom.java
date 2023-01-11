@@ -11,7 +11,7 @@ public enum EnumRoom {
             }
         },
     
-        GOBLIN(0.4) {
+        GOBLIN(0.39) {
     
             @Override
             public Room getRoom() {
@@ -55,6 +55,13 @@ public enum EnumRoom {
             @Override
             public Room getRoom() {
                 return new ZombieHordRoom();
+            }
+        },
+
+        TRAPPED(0.01) {
+            @Override
+            public Room getRoom() {
+                return new TrappedRoom();
             }
         };
     
