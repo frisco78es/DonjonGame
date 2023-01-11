@@ -17,14 +17,15 @@ Look -> permet d'obtenir un descriptif de la room
 Loot -> permet de récupéré les golds des mobs noté deads
     -> Transfert au joueur les golds des monstres morts de la room
     -> Supprime les cadavres de la room
+    -> permet de recupérer les items au sol
+    -> Supprimer les items de la salle
+    -> Ajoute a un inventaire pour utilisation plus tard ? 
+    -> Utilisation des items sur le champs ?
 Move -> permet de changer de room
     -> Afficher les différentes directions possibles
         -> Si l'action Look a été éffectuer : affiche tout les voisins et on laisse le choix au joueur d'ou il va
         -> Si l'action Look n'a pas été éffectuer : le code choisis pour lui une salle aléatoire
-Use -> permet de recupérer les items au sol
-    -> Supprimer les items de la salle
-    -> Ajoute a un inventaire pour utilisation plus tard ? 
-    -> Utilisation des items sur le champs ?
+Use -> permet d'intéragir avec une room (fonction interact)
 
 GAME START
 
