@@ -110,5 +110,8 @@ public class AdventureGame {
 		if (this.player.getLifePoints() <= 0) {
 			System.out.println("You just died in the dungeon, thanks for playing and good luck next time.");
 		}
+		if (this.isFinished()) {
+			System.out.println("Congratulations ! You did beat the dungeon. But many secrets still remain in the dungeon, and you are welcome to try it again !");
+		}
 	}
 }
