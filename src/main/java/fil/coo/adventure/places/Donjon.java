@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Random;
 
 import fil.coo.adventure.places.directions.Direction;
+import fil.coo.adventure.places.entity.EnumRoom;
+import fil.coo.adventure.places.entity.StartingRoom;
 
 public class Donjon {
 
