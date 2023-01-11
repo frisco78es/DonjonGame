@@ -26,15 +26,4 @@ public class Attack implements Actions {
 		return !r.getMonsters().isEmpty();
 	}
 
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void execute(Room r) {
-		// TODO Auto-generated method stub
-
-	}
 }
