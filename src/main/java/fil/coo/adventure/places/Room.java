@@ -93,7 +93,7 @@ public class Room {
 	}
 
 	public void interact(Player player) {
-		System.out.println("It looks like nothing special can happen here");
+		System.out.println("It looks like nothing special can happen in this room...");
 		this.explored = true;
 	}
 
