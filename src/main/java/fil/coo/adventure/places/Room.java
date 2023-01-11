@@ -18,7 +18,7 @@ public class Room {
 	protected List<Item> items;
 	protected Map<Direction, Room> neighbour;
 	public String name;
-	
+
 	public Room() {
 		this.monsters = new ArrayList<Monster>();
 		this.items = new ArrayList<Item>();
@@ -74,7 +74,7 @@ public class Room {
 	public boolean isExit() {
 		return false;
 	}
-	
+
 	public void addNeighbour(Direction d, Room r) {
 		this.neighbour.put(d, r);
 	}
