@@ -10,6 +10,6 @@ public class Main {
 		Donjon map = new Donjon(5);
 		Room startingRoom = map.generateMap();
 		aG.setCurrentRoom(startingRoom);
-		// aG.start();
+		aG.start();
 	}
 }
