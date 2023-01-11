@@ -51,8 +51,10 @@ public class AdventureGame {
 
 	public void start() {
 		System.out.println("The new game starts");
-		System.out.println("You are an adventurer who try too cross a dongeon. Your objectif is to find the exit and beat the Dragon that guard it. Good luck and may the god be with you !");
-		System.out.println("Welcome to the first room of the dungeon. Here's a little tutorial on how it work. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
+		System.out.println(
+				"You are an adventurer who try too cross a dongeon. Your objectif is to find the exit and beat the Dragon that guard it. Good luck and may the god be with you !");
+		System.out.println(
+				"Welcome to the first room of the dungeon. Here's a little tutorial on how it work. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
 		while (!this.isFinished() && !(this.player.getLifePoints() <= 0)) {
 			String action;
 			Scanner scan = new Scanner(System.in);
@@ -93,6 +95,7 @@ public class AdventureGame {
 						scan.close();
 						break;
 					}
+					move.execute(currentRoom, player, this);
 					break;
 				case "loot":
 					Loot loot = new Loot();
@@ -111,7 +114,8 @@ public class AdventureGame {
 			System.out.println("You just died in the dungeon, thanks for playing and good luck next time.");
 		}
 		if (this.isFinished()) {
-			System.out.println("Congratulations ! You did beat the dungeon. But many secrets still remain in the dungeon, and you are welcome to try it again !");
+			System.out.println(
+					"Congratulations ! You did beat the dungeon. But many secrets still remain in the dungeon, and you are welcome to try it again !");
 		}
 	}
 }
