@@ -1,4 +1,6 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
+
+import fil.coo.adventure.places.Room;
 
 public class StartingRoom extends Room {
     public StartingRoom(String name) {

@@ -1,4 +1,6 @@
-package fil.coo.adventure.places;
+package fil.coo.adventure.places.entity;
+
+import fil.coo.adventure.places.Room;
 
 public enum EnumRoom {
         BALROG(0.05) {
@@ -9,7 +11,7 @@ public enum EnumRoom {
             }
         },
     
-        GOBLIN(0.5) {
+        GOBLIN(0.4) {
     
             @Override
             public Room getRoom() {
@@ -46,6 +48,13 @@ public enum EnumRoom {
             @Override
             public Room getRoom() {
                 return new KrakenRoom();
+            }
+        },
+
+        ZOMBIE(0.1) {
+            @Override
+            public Room getRoom() {
+                return new ZombieHordRoom();
             }
         };
     
