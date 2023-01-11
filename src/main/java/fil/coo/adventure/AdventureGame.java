@@ -55,9 +55,9 @@ public class AdventureGame {
 				"You are an adventurer who try too cross a dongeon. Your objectif is to find the exit and beat the Dragon that guard it. Good luck and may the god be with you !");
 		System.out.println(
 				"Welcome to the first room of the dungeon. Here's a little tutorial on how it work. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
+		Scanner scan = new Scanner(System.in);
 		while (!this.isFinished() && !(this.player.getLifePoints() <= 0)) {
 			String action;
-			Scanner scan = new Scanner(System.in);
 			System.out.println("What do you do ?");
 			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE ?");
 			action = scan.next();
@@ -81,21 +81,19 @@ public class AdventureGame {
 					break;
 				case "use":
 					Use use = new Use();
-					use.isPossible(this.currentRoom);
 					if (use.isPossible(this.currentRoom) == false) {
-						System.out.println("You don't have any objects. You can't do this action");
+						System.out.println("This room have already been interacted with. You can't do this action");
 						break;
 					}
 					use.execute(currentRoom, player);
 					break;
 				case "move":
 					Move move = new Move();
-					if (move.isPossible(this.currentRoom) == true) {
-						System.out.println("en attente");
-						scan.close();
+					if (move.isPossible(this.currentRoom) == false) {
+						System.out.println("You can't currently move.");
 						break;
 					}
-					move.execute(currentRoom, player, this);
+					move.execute(this.currentRoom, player, this);
 					break;
 				case "loot":
 					Loot loot = new Loot();
@@ -117,5 +115,6 @@ public class AdventureGame {
 			System.out.println(
 					"Congratulations ! You did beat the dungeon. But many secrets still remain in the dungeon, and you are welcome to try it again !");
 		}
+		scan.close();
 	}
 }

@@ -1,7 +1,5 @@
 package fil.coo.adventure.entities.actions.util;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
@@ -14,6 +12,11 @@ import fil.coo.adventure.places.Room;
 import fil.coo.adventure.places.directions.Direction;
 
 public class Move implements Actions {
+	private Scanner scanner;
+
+	public Move() {
+		this.scanner = new Scanner(System.in);
+	}
 
 	private Room move(Direction d, Room r) {
 		r.getNeighbour(d);
@@ -23,7 +26,7 @@ public class Move implements Actions {
 
 	public boolean isPossible(Room r) {
 		List<Monster> monsters = r.getMonsters();
-		return (r.getPossibleDirections().size() > 0 && !(monsters.isEmpty()));
+		return (r.getPossibleDirections().size() > 0 && monsters.isEmpty());
 	}
 
 	public void execute(Room r, Player p, AdventureGame ag) {
@@ -32,13 +35,11 @@ public class Move implements Actions {
 
 		Set<Direction> directions = r.getPossibleDirections();
 		for (Direction direction : directions) {
-			System.out.print(direction.toString().toUpperCase() + " /");
+			System.out.print(direction.toString().toUpperCase() + " / ");
 		}
 
-		System.out.println(" CANCEL.");
-
-		Scanner scanner = new Scanner(System.in);
-		String PlayerDirection = scanner.next();
+		System.out.println("CANCEL ?");
+		String PlayerDirection = this.scanner.next();
 
 		switch (PlayerDirection.toLowerCase()) {
 			case "north":
@@ -63,15 +64,12 @@ public class Move implements Actions {
 
 			case "CANCEL":
 			case "cancel":
-
 				return;
-
 			default:
 				System.out.println("Direction and cancel not found.");
 				execute(r, p, ag);
 				break;
 		}
-
 		if (nextRoom != null) {
 			ag.setCurrentRoom(nextRoom);
 			return;
@@ -81,13 +79,8 @@ public class Move implements Actions {
 		execute(r, p, ag);
 	}
 
-	public void execute(Room r) {
-
-	}
+	public void execute(Room r) {}
 
 	@Override
-	public void execute(Room r, Player p) {
-		// TODO Auto-generated method stub
-
-	}
+	public void execute(Room r, Player p) {}
 }
