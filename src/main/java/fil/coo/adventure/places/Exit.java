@@ -8,6 +8,11 @@ public class Exit extends Room {
 		this.monsters.add(new Dragon());
 	}
 
+	public Exit(String name) {
+		super(name);
+		this.monsters.add(new Dragon());
+	}
+	
 	public boolean isExit() {
 		return true;
 	}

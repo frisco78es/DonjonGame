@@ -6,7 +6,7 @@ import fil.coo.adventure.places.Room;
 
 public class BalrogRoom extends Room {
     public BalrogRoom() {
-        super();
+        super("Balrog Room");
         this.addMonster(new Balrog());
         this.addItem(new StrengthPotion());
     }

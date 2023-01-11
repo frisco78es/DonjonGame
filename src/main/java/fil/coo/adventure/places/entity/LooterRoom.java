@@ -6,8 +6,8 @@ import fil.coo.adventure.entities.monsters.util.Looter;
 import fil.coo.adventure.places.Room;
 
 public class LooterRoom extends Room {
-    public LooterRoom() {
-        super();
+    public LooterRoom () {
+        super("Looter Room");
         this.addMonster(new Looter());
         this.addMonster(new Looter());
         this.addMonster(new Looter());
@@ -15,6 +15,7 @@ public class LooterRoom extends Room {
     }
 
     public void interact(Player player) {
+        this.explored = true;
         player.addGold(50);
         System.out.println("Lucky you ! You just some gold in a crate, 50 more in your pocket !");
     }

@@ -7,6 +7,9 @@ public class GoldChest extends Item {
 
 	@Override
 	public void isUsedBy(Player player) {
+		System.out.println("Lucky you, the chest is already openned, you take everything inside worth something and leave.");
+		System.out.println("SYS: 50 golds added to your bag.");
+		player.addGold(50);
 	}
 
 }
