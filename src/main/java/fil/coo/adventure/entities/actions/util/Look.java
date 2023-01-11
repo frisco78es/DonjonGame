@@ -17,14 +17,16 @@ public class Look implements Actions {
 		List<Item> items = r.getItems();
 		List<GameCharacters> characters = r.getDeads();
 
-		System.out.println("You're entering a " + r.name);
+		System.out.println("You are currently in a " + r.name);
 		System.out.println("In the dark of the room you can see " + monsters.size() + " monsters ready to fight");
 
 		for (Monster m : monsters) {
 			System.out.println(m.toString());
 		}
 
-		System.out.println("While looking around, you also spot some item on the ground that are ready to be taken.");
+		if(items.size() > 0) {
+			System.out.println("While looking around, you also spot some item on the ground that are ready to be taken.");
+		}
 
 		for (Item item : items) {
 			System.out.println(item.toString());
