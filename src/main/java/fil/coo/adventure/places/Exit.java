@@ -4,7 +4,7 @@ import fil.coo.adventure.entities.monsters.util.*;
 
 public class Exit extends Room {
 	public Exit() {
-		super();
+		super("Exit Room");
 		this.monsters.add(new Dragon());
 	}
 

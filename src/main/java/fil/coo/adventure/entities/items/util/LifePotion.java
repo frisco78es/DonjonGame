@@ -12,4 +12,8 @@ public class LifePotion extends Item {
 		System.out.println("SYS: 30 life points recovered.");
 	}
 
+	@Override
+	public String toString() {
+		return "Life Potion";
+	}
 }

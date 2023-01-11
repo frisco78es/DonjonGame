@@ -12,4 +12,8 @@ public class GoldChest extends Item {
 		player.addGold(50);
 	}
 
+	@Override
+	public String toString() {
+		return "Gold Chest";
+	}
 }
