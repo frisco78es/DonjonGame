@@ -45,5 +45,6 @@ public class SlimeRoom extends Room {
                 System.out.println("SYS: You entered a wrong command, please try again.");
                 break;
         }
+        sc.close();
     }
 }
