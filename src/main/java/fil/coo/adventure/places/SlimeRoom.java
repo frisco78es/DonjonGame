@@ -24,6 +24,7 @@ public class SlimeRoom extends Room {
     }
 
     public void interact(Player player) {
+        this.explored = true;
         System.out.println(
                 "This room is nasty, even if i've found something that look like a potion i'm not sure if i wan't to drink it.");
         System.out.println("Drink it ?");
