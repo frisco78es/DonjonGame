@@ -10,6 +10,5 @@ public class GoblinRoom extends Room {
         this.addMonster(new Goblin());
         this.addMonster(new Goblin());
         this.addMonster(new Goblin());
-        this.addItem(new LifePotion());
     }
 }
