@@ -10,8 +10,4 @@ public class StartingRoom extends Room {
     public StartingRoom() {
         super("Starting Room");
     }
-
-    public boolean isStart() {
-        return true;
-    }
 }

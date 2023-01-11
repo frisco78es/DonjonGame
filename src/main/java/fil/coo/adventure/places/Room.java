@@ -76,10 +76,6 @@ public class Room {
 		return false;
 	}
 
-	public boolean isStart() {
-		return false;
-	}
-
 	public void addNeighbour(Direction d, Room r) {
 		this.neighbour.put(d, r);
 	}
