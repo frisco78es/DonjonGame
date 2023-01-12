@@ -23,7 +23,7 @@ public class Attack implements Actions {
 
 	public void execute(Room r, Player p) {
 
-		while (r.getMonsters().size() > 0) {
+		while (r.getMonsters().size() > 0 && p.getLifePoints() > 0) {
 			Monster m = r.getFirstMonster();
 			boolean isWin = this.fight(p, m);
 

@@ -17,7 +17,7 @@ public class Look implements Actions {
 		List<Item> items = r.getItems();
 		List<GameCharacters> characters = r.getDeads();
 
-		System.out.println("You are currently in a " + r.name);
+		System.out.println("You are currently in " + r.name);
 		System.out.println("In the dark of the room you can see " + monsters.size() + " monsters ready to fight");
 
 		for (Monster m : monsters) {

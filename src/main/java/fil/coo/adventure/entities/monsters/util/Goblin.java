@@ -4,7 +4,7 @@ import fil.coo.adventure.entities.monsters.Monster;
 
 public class Goblin extends Monster {
 	public Goblin() {
-		super(15, 5);
+		super(25, 5);
 	}
 
 	public String toString() {

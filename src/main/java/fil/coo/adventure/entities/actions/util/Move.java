@@ -71,6 +71,8 @@ public class Move implements Actions {
 		}
 		if (nextRoom != null) {
 			ag.setCurrentRoom(nextRoom);
+			System.out.println("You are moving to the " + PlayerDirection.toLowerCase() + ".");
+			System.out.println("After a long corridor, you finaly enter a room with written " + nextRoom.getName() + " at the entrance.");
 			return;
 		}
 
