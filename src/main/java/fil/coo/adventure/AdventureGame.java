@@ -49,7 +49,7 @@ public class AdventureGame {
 	}
 
 	public boolean isFinished() {
-		return this.currentRoom.isExit() && this.currentRoom.getMonsters().isEmpty();
+		return this.currentRoom.isExit() && this.currentRoom.getMonsters().isEmpty() && this.currentRoom.isExplored();
 	}
 
 	public void playerMoveTo(Direction direction) {
