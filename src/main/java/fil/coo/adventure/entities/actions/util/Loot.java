@@ -25,8 +25,12 @@ public class Loot implements Actions {
 		}
 	}
 
-	public boolean isPossible(Room room) {
-		// Action is only possible if the room have no monsters alive
-		return room.getMonsters().isEmpty();
+// Action is only possible if the room have no monsters alive	
+public boolean isPossible(Room room) {
+		if (!room.getMonsters().isEmpty()) {
+			return false;
+		}
+
+		return (!room.getDeads().isEmpty() || !room.getItems().isEmpty());
 	}
 }
