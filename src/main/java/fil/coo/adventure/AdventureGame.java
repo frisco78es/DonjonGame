@@ -17,9 +17,15 @@ import fil.coo.adventure.entities.monsters.*;
 public class AdventureGame {
 	private Room currentRoom;
 	private Player player;
+	private int level;
 
 	public AdventureGame() {
 		this.player = new Player();
+		this.level = 1;
+
+		Donjon map = new Donjon(this.level * 5);
+		Room startingRoom = map.generateMap();
+		this.setCurrentRoom(startingRoom);
 	}
 
 	public Room currentRoom() {
@@ -116,13 +122,17 @@ public class AdventureGame {
 					System.out.println("Your action isn't in the list");
 					break;
 			}
+			if (this.isFinished()) {
+				System.out.println("Congratulations ! You did beat the level. But the dungeon don't end yet !");
+				this.level+=1;
+				System.out.println("You now enter the level " + this.level + " !");
+				Donjon map = new Donjon(this.level * 5);
+				Room startingRoom = map.generateMap();
+				this.setCurrentRoom(startingRoom);
+			}
 		}
 		if (this.player.getLifePoints() <= 0) {
 			System.out.println("You just died in the dungeon, thanks for playing and good luck for the next time.");
-		}
-		if (this.isFinished()) {
-			System.out.println(
-					"Congratulations ! You did beat the dungeon. But many secrets still remain in the dungeon, and you are welcome to try it again !");
 		}
 		scan.close();
 	}

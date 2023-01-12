@@ -26,6 +26,6 @@ public class Loot implements Actions {
 	}
 
 	public boolean isPossible(Room r) {
-		return !r.getDeads().isEmpty();
+		return r.getMonsters().isEmpty();
 	}
 }
