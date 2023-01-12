@@ -20,8 +20,7 @@ public class Move implements Actions {
 
 	private Room move(Direction d, Room r) {
 		r.getNeighbour(d);
-		Room room = r.getNeighbour(d);
-		return room;
+		return r.getNeighbour(d);
 	};
 
 	public boolean isPossible(Room r) {

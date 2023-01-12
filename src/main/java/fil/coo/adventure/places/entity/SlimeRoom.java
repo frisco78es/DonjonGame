@@ -1,7 +1,5 @@
 package fil.coo.adventure.places.entity;
 
-import java.util.Scanner;
-
 import fil.coo.adventure.entities.Player;
 import fil.coo.adventure.entities.items.util.TrappedChest;
 import fil.coo.adventure.entities.monsters.util.Slime;
@@ -30,8 +28,7 @@ public class SlimeRoom extends Room {
                 "This room is nasty, even if i've found something that look like a potion i'm not sure if i wan't to drink it.");
         System.out.println("Drink it ?");
         System.out.println("YES / NO ?");
-        Scanner sc = new Scanner(System.in);
-        String playerAnswer = sc.nextLine();
+        String playerAnswer = this.scanner.nextLine();
         switch (playerAnswer.toLowerCase()) {
             case "yes":
                 player.addStrength(5);
@@ -45,6 +42,5 @@ public class SlimeRoom extends Room {
                 System.out.println("SYS: You entered a wrong command, please try again.");
                 break;
         }
-        sc.close();
     }
 }
