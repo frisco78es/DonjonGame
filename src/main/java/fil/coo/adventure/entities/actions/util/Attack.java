@@ -9,34 +9,36 @@ import fil.coo.adventure.entities.Player;
 
 public class Attack implements Actions {
 
-	private boolean fight(Player p, GameCharacters gc) {
-		while (p.getLifePoints() > 0 && gc.getLifePoints() > 0) {
-			p.attack(gc);
+	private boolean fight(Player player, GameCharacters gameCharacter) {
+		// fight continue until one of the character is dead
+		while (player.getLifePoints() > 0 && gameCharacter.getLifePoints() > 0) {
+			player.attack(gameCharacter);
 		}
 		
-		if (p.getLifePoints() <= 0) {
+		if (player.getLifePoints() <= 0) {
 			return false;
 		}
 
 		return true;
 	}
 
-	public void execute(Room r, Player p) {
-
-		while (r.getMonsters().size() > 0 && p.getLifePoints() > 0) {
-			Monster m = r.getFirstMonster();
-			boolean isWin = this.fight(p, m);
+	public void execute(Room room, Player player) {
+		// fight monsters in the room until everyone of them is defeated or you die
+		while (room.getMonsters().size() > 0 && player.getLifePoints() > 0) {
+			Monster monster = room.getFirstMonster();
+			boolean isWin = this.fight(player, monster);
 
 			if (isWin) {
-				r.addDead(m);
-				r.removeMonster(m);
+				room.addDead(monster);
+				room.removeMonster(monster);
 			} else {
-				r.addDead(p);
+				room.addDead(player);
 			}
 		}
 	}
 
-	public boolean isPossible(Room r) {
-		return !r.getMonsters().isEmpty();
+	public boolean isPossible(Room room) {
+		// Action is only possible if the room have monsters alive
+		return !room.getMonsters().isEmpty();
 	}
 }

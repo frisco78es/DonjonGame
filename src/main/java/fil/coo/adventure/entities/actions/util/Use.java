@@ -5,11 +5,12 @@ import fil.coo.adventure.entities.actions.Actions;
 import fil.coo.adventure.places.Room;
 
 public class Use implements Actions {
-	public boolean isPossible(Room r) {
-		return !r.isExplored();
+	// is possible if the room haven't been explored
+	public boolean isPossible(Room room) {
+		return !room.isExplored();
 	}
 
-	public void execute(Room r, Player p) {
-		r.interact(p);
+	public void execute(Room room, Player player) {
+		room.interact(player);
 	}
 }

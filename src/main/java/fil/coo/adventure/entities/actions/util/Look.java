@@ -41,6 +41,7 @@ public class Look implements Actions {
 	}
 
 	public boolean isPossible(Room r) {
+		// Action is always possible
 		return true;
 	}
 

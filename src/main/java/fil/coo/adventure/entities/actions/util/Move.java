@@ -23,65 +23,71 @@ public class Move implements Actions {
 		return r.getNeighbour(d);
 	};
 
-	public boolean isPossible(Room r) {
-		List<Monster> monsters = r.getMonsters();
-		return (r.getPossibleDirections().size() > 0 && monsters.isEmpty());
+	public boolean isPossible(Room room) {
+		// Action is only possible if 
+		List<Monster> monsters = room.getMonsters();
+		return (room.getPossibleDirections().size() > 0 && monsters.isEmpty());
 	}
 
-	public void execute(Room r, Player p, AdventureGame ag) {
+	public void execute(Room room, Player player, AdventureGame game) {
 
 		Room nextRoom = null;
 
-		Set<Direction> directions = r.getPossibleDirections();
+		Set<Direction> directions = room.getPossibleDirections();
+		// Display all possible direction to take for the user.
 		for (Direction direction : directions) {
 			System.out.print(direction.toString().toUpperCase() + " / ");
 		}
-
 		System.out.println("CANCEL ?");
+
 		String PlayerDirection = this.scanner.next();
 
+		// Associate a room for each direction.
 		switch (PlayerDirection.toLowerCase()) {
 			case "north":
 			case "n":
-				nextRoom = move(Direction.N, r);
+				nextRoom = move(Direction.N, room);
 				break;
 
 			case "south":
 			case "s":
-				nextRoom = move(Direction.S, r);
+				nextRoom = move(Direction.S, room);
 				break;
 
 			case "east":
 			case "e":
-				nextRoom = move(Direction.E, r);
+				nextRoom = move(Direction.E, room);
 				break;
 
 			case "west":
 			case "w":
-				nextRoom = move(Direction.W, r);
+				nextRoom = move(Direction.W, room);
 				break;
 
 			case "CANCEL":
 			case "cancel":
 				return;
 			default:
-				System.out.println("Direction and cancel not found.");
-				execute(r, p, ag);
+				System.out.println("Direction given is not valid.");
+				this.execute(room, player, game);
 				break;
 		}
+
+		// If a room exist, move to the next room and return
 		if (nextRoom != null) {
-			ag.setCurrentRoom(nextRoom);
+			game.setCurrentRoom(nextRoom);
 			System.out.println("You are moving to the " + PlayerDirection.toLowerCase() + ".");
 			System.out.println("After a long corridor, you finaly enter a room with written " + nextRoom.getName() + " at the entrance.");
 			return;
+		} else {
+		// If not, reask for a direction
+		System.out.println("The choiced direction is lead to nothing.");
+		this.execute(room, player, game);
 		}
-
-		System.out.println("The choice direction is not possible.");
-		execute(r, p, ag);
 	}
 
-	public void execute(Room r) {}
+	public void execute(Room room) {}
 
 	@Override
-	public void execute(Room r, Player p) {}
+	public void execute(Room room, Player player) {}
 }

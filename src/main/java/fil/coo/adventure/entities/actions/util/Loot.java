@@ -13,7 +13,7 @@ public class Loot implements Actions {
 			GameCharacters corpse = r.getFirstDead();
 			p.addGold(corpse.getGold());
 			r.removeDead(corpse);
-			System.out.println("While looking for some drops on this " + corpse.toString() + " you were able to find "
+			System.out.println("While looking for some drops on this " + corpse.toString() + " corpse, you were able to find "
 					+ corpse.getGold() + "golds.");
 		}
 
@@ -26,6 +26,7 @@ public class Loot implements Actions {
 	}
 
 	public boolean isPossible(Room r) {
+		// Action is only possible if the room have no monsters alive
 		return r.getMonsters().isEmpty();
 	}
 }
