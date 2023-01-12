@@ -19,10 +19,9 @@ public class Shop extends Room {
 				"You found a not very welcoming shop offering you to buy some items in exchange of your precious gold.");
 		System.out.println("You can either enter the shop or leave. What would you do ?");
 		Boolean stay = true;
-		Scanner sc = new Scanner(System.in);
 		while (stay) {
 			System.out.println("ENTER / LEAVE ?");
-			String playerAnswer = sc.nextLine();
+			String playerAnswer = this.scanner.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "enter":
 					this.shop(player);
@@ -36,7 +35,6 @@ public class Shop extends Room {
 					break;
 			}
 		}
-		sc.close();
 	}
 
 	private void shop(Player player) {

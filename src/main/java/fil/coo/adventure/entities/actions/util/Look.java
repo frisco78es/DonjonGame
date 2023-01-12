@@ -38,7 +38,6 @@ public class Look implements Actions {
 				System.out.println(g.toString());
 			}
 		}
-
 	}
 
 	public boolean isPossible(Room r) {
