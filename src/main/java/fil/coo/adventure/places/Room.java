@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 
 import fil.coo.adventure.entities.GameCharacters;
@@ -19,6 +20,7 @@ public class Room {
 	protected Map<Direction, Room> neighbour;
 	public String name;
 	public Boolean explored = false;
+	protected Scanner scanner;
 
 	public Room() {
 		this.monsters = new ArrayList<Monster>();
@@ -26,6 +28,7 @@ public class Room {
 		this.deads = new ArrayList<GameCharacters>();
 		this.neighbour = new HashMap<Direction, Room>();
 		this.name = "";
+		this.scanner = new Scanner(System.in);
 	}
 
 	public Room(String name) {
@@ -34,6 +37,7 @@ public class Room {
 		this.deads = new ArrayList<GameCharacters>();
 		this.neighbour = new HashMap<Direction, Room>();
 		this.name = name;
+		this.scanner = new Scanner(System.in);
 	}
 
 	public void addMonster(Monster monster) {
@@ -98,6 +102,10 @@ public class Room {
 
 	public Room getNeighbour(Direction d) {
 		return this.neighbour.get(d);
+	}
+
+	public Map<Direction, Room> getNeighbours() {
+		return this.neighbour;
 	}
 
 	public String toString() {

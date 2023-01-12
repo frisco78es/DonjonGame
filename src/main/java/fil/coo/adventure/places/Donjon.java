@@ -42,29 +42,28 @@ public class Donjon {
             rooms.put(i, lastObject);
         }
 
-       
         StartingRoom startRoom = new StartingRoom("Starting Room");
-        List<Room> roomUsed = new ArrayList<Room>();
-        int nbAl = rand.nextInt(3) + 1;
-        // generate adjacent room to the starting one
-        while (nbAl != 0) {
+        // generate between 1 and 4 neighbour for our Starting room
+        // generate adjacent rooms to the starting one
+        Boolean bool = true;
+        while (bool) {
             Direction direction = Direction.alea();
+            // if our room already have a neighbour in this direction, change direction
             if (startRoom.getNeighbour(direction) != null) {
                 break;
             }
-            for (Room room : rooms.values()) {
-                if (room.getNeighbour(direction.opposite()) == null) {
-                    startRoom.addNeighbour(direction, room);
-                    room.addNeighbour(direction.opposite(), startRoom);
-                    roomUsed.add(room);
-                    nbAl--;
-                    break;
-                }
+            Room room = rooms.get(0);
+            // if the room dont have a neighbour in the opposite direction, link the 2
+            if (room.getNeighbour(direction.opposite()) == null) {
+                startRoom.addNeighbour(direction, room);
+                room.addNeighbour(direction.opposite(), startRoom);
+                bool = false;
             }
         }
 
         // fill empty rooms
         for (Room room : rooms.values()) {
+            // If a room is have no neighbour yet, give him a random linked one
             if (room.getPossibleDirections().size() == 0) {
                 linkRoom(room, rooms);
             }
@@ -84,17 +83,26 @@ public class Donjon {
         Room roomToLink;
         int roomToLinkKey = 0;
         while (bool) {
-            roomToLinkKey = rand.nextInt(this.nbRoom - 1) + 1;
+            roomToLinkKey = rand.nextInt(this.nbRoom - 1);
             roomToLink = rooms.get(roomToLinkKey);
-            if (room.getPossibleDirections().size() != 4 || room.getPossibleDirections().size() != 0) {
+            // Get out of loop is the randomly selected room is full or is not currently
+            // linked to an other one.
+            if (roomToLink.getPossibleDirections().size() != 4 && roomToLink.getPossibleDirections().size() != 0) {
                 bool = false;
+            }
+            // If randomly selected room is the same as the room we try to link continue the
+            // loop
+            if (roomToLink == room) {
+                bool = true;
             }
         }
         roomToLink = rooms.get(roomToLinkKey);
         bool = true;
         while (bool) {
             Direction direction = Direction.alea();
-            if (roomToLink.getNeighbour(direction) == null) {
+            // If the roomToLink dont have a neighbour in the selected direction and our
+            // current room in the opposite direction
+            if (roomToLink.getNeighbour(direction) == null && room.getNeighbour(direction.opposite()) == null) {
                 roomToLink.addNeighbour(direction, room);
                 room.addNeighbour(direction.opposite(), roomToLink);
                 bool = false;
