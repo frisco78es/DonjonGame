@@ -13,8 +13,8 @@ public class StartingRoomTest {
     public void generateRoom() {
         Room r = new StartingRoom();
 
-        assertEquals("check never monster in this room", true, r.getMonsters().isEmpty());
-        assertEquals("check never dead in this room", true, r.getDeads().isEmpty());
-        assertEquals("check never item in this room", true, r.getItems().isEmpty());
+        assertEquals("check there is no monster in this room", true, r.getMonsters().isEmpty());
+        assertEquals("check there is no dead in this room", true, r.getDeads().isEmpty());
+        assertEquals("check there is no item in this room", true, r.getItems().isEmpty());
     }
 }
