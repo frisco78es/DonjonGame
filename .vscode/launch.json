@@ -9,6 +9,13 @@
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "fil.coo.adventure.Main",
+            "projectName": "Projet partiel_3de6712c"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "fil.coo.adventure.Main",
             "projectName": "Donjon_e24f1f48"
         },
         {
