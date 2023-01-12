@@ -48,6 +48,10 @@ public class Room {
 		return this.monsters;
 	}
 
+	public Monster getFirstMonster() {
+		return this.monsters.get(0);
+	}
+
 	public void addDead(GameCharacters dead) {
 		this.deads.add(dead);
 	}
@@ -60,6 +64,10 @@ public class Room {
 		return this.deads;
 	}
 
+	public GameCharacters getFirstDead() {
+		return this.deads.get(0);
+	}
+
 	public void addItem(Item item) {
 		this.items.add(item);
 	}
@@ -70,6 +78,10 @@ public class Room {
 
 	public List<Item> getItems() {
 		return this.items;
+	}
+
+	public Item getFirstItem() {
+		return this.items.get(0);
 	}
 
 	public boolean isExit() {

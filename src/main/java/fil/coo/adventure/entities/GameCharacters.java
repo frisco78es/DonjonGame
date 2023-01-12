@@ -60,4 +60,8 @@ public abstract class GameCharacters {
 		if (theOtherCharacterToAttack.getLifePoints() >= 0)
 			this.LooseLife(theOtherCharacterToAttack.getStrength());
 	}
+
+	public String toString() {
+		return this.getClass().toString();
+	}
 }

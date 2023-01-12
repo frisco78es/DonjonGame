@@ -21,9 +21,11 @@ public class TrappedRoom extends Room {
         this.explored = true;
         System.out.println("Something is strange, very strange...");
         System.out.println("The 2 dragons skeleton in the room woke up and prepare to fight you.");
-        for (GameCharacters gc : this.getDeads()) {
+        while (this.getDeads().size() > 0) {
+            GameCharacters gc = this.getFirstDead();
             if(gc instanceof Monster) {
                 this.removeDead(gc);
+
             }
         }
         Dragon dragon1 = new Dragon();
