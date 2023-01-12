@@ -11,9 +11,9 @@ public abstract class GameCharacters {
 		this.gold = 0;
 	}
 	
-	public GameCharacters(int lP, int st) {
-		this.LifePoints = lP;
-		this.strength = st;
+	public GameCharacters(int lifePoints, int strength) {
+		this.LifePoints = lifePoints;
+		this.strength = strength;
 		this.gold = 0;
 	}
 	
@@ -25,7 +25,7 @@ public abstract class GameCharacters {
 		return this.strength;
 	}
 
-	public void addStrength(int stg) {
+	public void addStrength(int strength) {
 		this.strength += strength;
 	}
 	
@@ -33,26 +33,26 @@ public abstract class GameCharacters {
 		return this.gold;
 	}
 	
-	public void addGold(int g) {
-		this.gold += g;
+	public void addGold(int gold) {
+		this.gold += gold;
 	}
 
-	public void setGold(int g) {
-		this.gold = g;
+	public void setGold(int gold) {
+		this.gold = gold;
 	}
 
-	public void removeGold(int g) {
-		if(!(this.gold - g < 0)) {
-			this.gold -= g;
+	public void removeGold(int gold) {
+		if(!(this.gold - gold < 0)) {
+			this.gold -= gold;
 		}
 	}
 	
-	public void LooseLife(int st) {
-		this.LifePoints -= st;
+	public void LooseLife(int strength) {
+		this.LifePoints -= strength;
 	}
 
-	public void RecoverLife(int st) {
-		this.LifePoints += st;
+	public void RecoverLife(int number) {
+		this.LifePoints += number;
 	}
 	
 	public void attack(GameCharacters theOtherCharacterToAttack) {

@@ -30,11 +30,11 @@ public class Donjon {
             Room lastObject = EnumRoom.SLIME.getRoom();
             EnumRoom[] possibleValues = EnumRoom.values();
             for (EnumRoom object : possibleValues) {
-                roomCoef += object.getCoef();
+                roomCoef += object.getSpawnCoef();
                 if (generatedNumber >= roomOldCoef && generatedNumber < roomCoef) {
                     lastObject = object.getRoom();
                 }
-                roomOldCoef += object.getCoef();
+                roomOldCoef += object.getSpawnCoef();
             }
             lastObject.setName("Room " + String.valueOf(i));
             rooms.put(i, lastObject);

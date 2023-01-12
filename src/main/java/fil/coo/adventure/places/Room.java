@@ -92,16 +92,16 @@ public class Room {
 		return false;
 	}
 
-	public void addNeighbour(Direction d, Room r) {
-		this.neighbour.put(d, r);
+	public void addNeighbour(Direction direction, Room room) {
+		this.neighbour.put(direction, room);
 	}
 
 	public Set<Direction> getPossibleDirections() {
 		return this.neighbour.keySet();
 	}
 
-	public Room getNeighbour(Direction d) {
-		return this.neighbour.get(d);
+	public Room getNeighbour(Direction direction) {
+		return this.neighbour.get(direction);
 	}
 
 	public Map<Direction, Room> getNeighbours() {

@@ -65,14 +65,14 @@ public enum EnumRoom {
             }
         };
     
-        public final double coef;
+        public final double spawnCoef;
     
-        EnumRoom(double c) {
-            this.coef = c;
+        EnumRoom(double spawnCoef) {
+            this.spawnCoef = spawnCoef;
         };
     
         public abstract Room getRoom();
-        public double getCoef() {
-            return this.coef;
+        public double getSpawnCoef() {
+            return this.spawnCoef;
         };
     }

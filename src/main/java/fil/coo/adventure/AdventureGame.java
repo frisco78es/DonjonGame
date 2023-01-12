@@ -62,12 +62,12 @@ public class AdventureGame {
 				"You are an adventurer who try to cross a dongeon. Your objectif is to find the exit and beat the Dragon that guard it. Good luck and may the god be with you !");
 		System.out.println(
 				"Welcome to the first room of the dungeon. Here's a little tutorial on how it works. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
-		Scanner scan = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in);
 		while (!this.isFinished() && !(this.player.getLifePoints() <= 0)) {
 			String action;
 			System.out.println("What do you want to do ?");
 			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE / STATS ?");
-			action = scan.next();
+			action = scanner.next();
 			switch (action.toLowerCase()) {
 				case "attack":
 					Attack attack = new Attack();
@@ -134,6 +134,6 @@ public class AdventureGame {
 		if (this.player.getLifePoints() <= 0) {
 			System.out.println("You just died in the dungeon, thanks for playing and good luck for the next time.");
 		}
-		scan.close();
+		scanner.close();
 	}
 }

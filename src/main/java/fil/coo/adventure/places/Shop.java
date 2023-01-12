@@ -27,7 +27,7 @@ public class Shop extends Room {
 					this.shop(player);
 					break;
 				case "leave":
-					System.out.println("This shop don't look interesting, you are leaving this shop.");
+					System.out.println("You're are leaving this place.");
 					stay = false;
 					return;
 				default:
@@ -43,12 +43,11 @@ public class Shop extends Room {
 		System.out.println("You find some healing potions, being trade for 30 golds.");
 		System.out.println("You find some stength potions, being trade for 50 golds.");
 		System.out.println("What would you do ?");
-		Scanner sc = new Scanner(System.in);
 		Boolean stay = true;
 		while (stay) {
 			System.out.println("Current gold amount: " + player.getGold() + "g");
 			System.out.println("HEAL / STRENGTH / LEAVE ?");
-			String playerAnswer = sc.nextLine();
+			String playerAnswer = this.scanner.nextLine();
 			switch (playerAnswer.toLowerCase()) {
 				case "heal":
 					if (player.getGold() > 30) {
@@ -79,6 +78,5 @@ public class Shop extends Room {
 					break;
 			}
 		}
-		sc.close();
 	}
 }
