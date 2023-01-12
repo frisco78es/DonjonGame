@@ -4,7 +4,7 @@ import fil.coo.adventure.entities.monsters.Monster;
 
 public class Kraken extends Monster {
 	public Kraken() {
-		super(60, 15);
+		super(120, 15);
 	}
 
 	public String toString() {

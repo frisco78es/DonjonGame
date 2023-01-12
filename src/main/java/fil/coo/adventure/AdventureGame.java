@@ -7,6 +7,7 @@ import fil.coo.adventure.entities.actions.util.Attack;
 import fil.coo.adventure.entities.actions.util.Look;
 import fil.coo.adventure.entities.actions.util.Loot;
 import fil.coo.adventure.entities.actions.util.Move;
+import fil.coo.adventure.entities.actions.util.Stats;
 import fil.coo.adventure.entities.actions.util.Use;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.places.*;
@@ -59,7 +60,7 @@ public class AdventureGame {
 		while (!this.isFinished() && !(this.player.getLifePoints() <= 0)) {
 			String action;
 			System.out.println("What do you want to do ?");
-			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE ?");
+			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE / STATS ?");
 			action = scan.next();
 			switch (action.toLowerCase()) {
 				case "attack":
@@ -102,6 +103,14 @@ public class AdventureGame {
 						break;
 					}
 					loot.execute(this.currentRoom, this.player);
+					break;
+				case "stats":
+					Stats stats = new Stats();
+					if (stats.isPossible(this.currentRoom) == false) {
+						System.out.println("You can't consult your stat.");
+						break;
+					}
+					stats.execute(this.currentRoom, this.player);
 					break;
 				default:
 					System.out.println("Your action isn't in the list");
