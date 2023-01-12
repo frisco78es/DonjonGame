@@ -8,7 +8,7 @@ import fil.coo.adventure.entities.actions.util.Look;
 import fil.coo.adventure.entities.actions.util.Loot;
 import fil.coo.adventure.entities.actions.util.Move;
 import fil.coo.adventure.entities.actions.util.Stats;
-import fil.coo.adventure.entities.actions.util.Use;
+import fil.coo.adventure.entities.actions.util.Interact;
 import fil.coo.adventure.entities.items.Item;
 import fil.coo.adventure.places.*;
 import fil.coo.adventure.places.directions.*;
@@ -68,7 +68,7 @@ public class AdventureGame {
 		while (this.level < 6 && !(this.player.getLifePoints() <= 0)) {
 			String action;
 			System.out.println("What do you want to do ?");
-			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE / STATS ?");
+			System.out.println("ATTACK / LOOK / LOOT / MOVE / INTERACT / STATS ?");
 			action = scanner.next();
 			switch (action.toLowerCase()) {
 				case "attack":
@@ -88,8 +88,8 @@ public class AdventureGame {
 					}
 					look.execute(this.currentRoom);
 					break;
-				case "use":
-					Use use = new Use();
+				case "interact":
+					Interact use = new Interact();
 					if (use.isPossible(this.currentRoom) == false) {
 						System.out.println("This room have already been interacted with. You can't do this action");
 						break;
