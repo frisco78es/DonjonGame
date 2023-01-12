@@ -63,7 +63,9 @@ public class AdventureGame {
 		System.out.println(
 				"Welcome to the first room of the dungeon. Here's a little tutorial on how it works. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
 		Scanner scanner = new Scanner(System.in);
-		while (!this.isFinished() && !(this.player.getLifePoints() <= 0)) {
+
+		// Game loop continue until your life point reach 0 or you beat level 6
+		while (this.level < 6 && !(this.player.getLifePoints() <= 0)) {
 			String action;
 			System.out.println("What do you want to do ?");
 			System.out.println("ATTACK / LOOK / LOOT / MOVE / USE / STATS ?");
@@ -124,7 +126,7 @@ public class AdventureGame {
 			}
 			if (this.isFinished()) {
 				System.out.println("Congratulations ! You did beat the level. But the dungeon don't end yet !");
-				this.level+=1;
+				this.level += 1;
 				System.out.println("You now enter the level " + this.level + " !");
 				Donjon map = new Donjon(this.level * 5);
 				Room startingRoom = map.generateMap();
@@ -133,6 +135,12 @@ public class AdventureGame {
 		}
 		if (this.player.getLifePoints() <= 0) {
 			System.out.println("You just died in the dungeon, thanks for playing and good luck for the next time.");
+		}
+
+		if (this.level > 5) {
+			System.out.println(
+					"The 6th level brings you at the roof of the dungeon. You found a huge portal that you can't seem to interact with yet. You should go back to the cattle and give your report to the king.");
+			System.out.println("Thanks for playing !");
 		}
 		scanner.close();
 	}

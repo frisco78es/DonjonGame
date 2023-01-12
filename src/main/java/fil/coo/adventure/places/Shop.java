@@ -1,7 +1,5 @@
 package fil.coo.adventure.places;
 
-import java.util.Scanner;
-
 import fil.coo.adventure.entities.Player;
 
 public class Shop extends Room {
