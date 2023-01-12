@@ -104,7 +104,7 @@ public class AdventureGame {
 					loot.execute(this.currentRoom, this.player);
 					break;
 				default:
-					System.out.println("You're action isn't in the list");
+					System.out.println("Your action isn't in the list");
 					break;
 			}
 		}
