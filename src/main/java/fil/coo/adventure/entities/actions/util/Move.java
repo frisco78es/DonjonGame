@@ -18,7 +18,7 @@ public class Move implements Actions {
 		this.scanner = new Scanner(System.in);
 	}
 
-	private Room move(Direction d, Room r) {
+	public Room move(Direction d, Room r) {
 		r.getNeighbour(d);
 		return r.getNeighbour(d);
 	};
@@ -69,10 +69,12 @@ public class Move implements Actions {
 				execute(r, p, ag);
 				break;
 		}
+
 		if (nextRoom != null) {
 			ag.setCurrentRoom(nextRoom);
 			System.out.println("You are moving to the " + PlayerDirection.toLowerCase() + ".");
-			System.out.println("After a long corridor, you finaly enter a room with written " + nextRoom.getName() + " at the entrance.");
+			System.out.println("After a long corridor, you finaly enter a room with written " + nextRoom.getName()
+					+ " at the entrance.");
 			return;
 		}
 
@@ -80,8 +82,10 @@ public class Move implements Actions {
 		execute(r, p, ag);
 	}
 
-	public void execute(Room r) {}
+	public void execute(Room r) {
+	}
 
 	@Override
-	public void execute(Room r, Player p) {}
+	public void execute(Room r, Player p) {
+	}
 }
