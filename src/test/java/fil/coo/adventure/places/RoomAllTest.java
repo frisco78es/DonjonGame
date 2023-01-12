@@ -107,7 +107,7 @@ public class RoomAllTest {
                 isGood = true;
         }
 
-        assertEquals("should be monsters content slime", true, isGood);
+        assertEquals("should be monsters content Slime", true, isGood);
     }
 
     @Test
