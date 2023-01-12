@@ -4,7 +4,7 @@ import fil.coo.adventure.entities.monsters.Monster;
 
 public class Dragon extends Monster {
 	public Dragon() {
-		super(100, 25);
+		super(150, 25);
 	}
 
 	public String toString() {
