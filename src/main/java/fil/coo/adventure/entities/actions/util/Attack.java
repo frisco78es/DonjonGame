@@ -31,10 +31,12 @@ public class Attack implements Actions {
 			if (isWin) {
 				room.addDead(monster);
 				room.removeMonster(monster);
+				System.out.println("Congratulations adventurer you succeeded in killing the " + monster.toString() + " !");
 			} else {
 				room.addDead(player);
 			}
 		}
+		System.out.println("you currently have " + player.getLifePoints() + " life points left");
 	}
 
 	public boolean isPossible(Room room) {
