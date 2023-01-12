@@ -39,5 +39,4 @@ public class Attack implements Actions {
 	public boolean isPossible(Room r) {
 		return !r.getMonsters().isEmpty();
 	}
-
 }
