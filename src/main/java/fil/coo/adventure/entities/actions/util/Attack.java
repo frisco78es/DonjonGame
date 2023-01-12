@@ -13,7 +13,7 @@ public class Attack implements Actions {
 		while (p.getLifePoints() > 0 && gc.getLifePoints() > 0) {
 			p.attack(gc);
 		}
-		
+
 		if (p.getLifePoints() <= 0) {
 			return false;
 		}
@@ -30,10 +30,12 @@ public class Attack implements Actions {
 			if (isWin) {
 				r.addDead(m);
 				r.removeMonster(m);
+				System.out.println("congratulations adventurer you succeeded in killing the " + m.toString());
 			} else {
 				r.addDead(p);
 			}
 		}
+		System.out.println("you currently have " + p.getLifePoints() + " life points left");
 	}
 
 	public boolean isPossible(Room r) {
