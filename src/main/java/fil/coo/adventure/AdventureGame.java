@@ -68,7 +68,7 @@ public class AdventureGame {
 						System.out.println("There aren't any monsters. You can't do this action");
 						break;
 					}
-					attack.execute(currentRoom, player);
+					attack.execute(this.currentRoom, this.player);
 					break;
 				case "look":
 					Look look = new Look();
@@ -77,7 +77,7 @@ public class AdventureGame {
 								"There aren't any monsters, any dead bodies and any items. You can't do this action");
 						break;
 					}
-					look.execute(currentRoom);
+					look.execute(this.currentRoom);
 					break;
 				case "use":
 					Use use = new Use();
@@ -85,7 +85,7 @@ public class AdventureGame {
 						System.out.println("This room have already been interacted with. You can't do this action");
 						break;
 					}
-					use.execute(currentRoom, player);
+					use.execute(this.currentRoom, this.player);
 					break;
 				case "move":
 					Move move = new Move();
@@ -93,7 +93,7 @@ public class AdventureGame {
 						System.out.println("You can't currently move.");
 						break;
 					}
-					move.execute(this.currentRoom, player, this);
+					move.execute(this.currentRoom, this.player, this);
 					break;
 				case "loot":
 					Loot loot = new Loot();
@@ -101,7 +101,7 @@ public class AdventureGame {
 						System.out.println("There aren't any dead body in this place. You can't do this action");
 						break;
 					}
-					loot.execute(currentRoom, player);
+					loot.execute(this.currentRoom, this.player);
 					break;
 				default:
 					System.out.println("You're action isn't in the list");
