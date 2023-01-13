@@ -61,7 +61,7 @@ public class AdventureGame {
 		System.out.println(
 				"You are an adventurer who try to cross a dongeon. Your objectif is to find the exit and beat the Dragon that guard it. Good luck and may the god be with you !");
 		System.out.println(
-				"Welcome to the first room of the dungeon. Here's a little tutorial on how it works. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action USE to start out.");
+				"Welcome to the first room of the dungeon. Here's a little tutorial on how it works. At the start of each turn, you will be able to choose an action. This action will dictate what happen. Try using the action INTERACT to start out.");
 		Scanner scanner = new Scanner(System.in);
 
 		// Game loop continue until your life point reach 0 or you beat level 6
