@@ -14,7 +14,7 @@ public class Loot implements Actions {
 			player.addGold(corpse.getGold());
 			room.removeDead(corpse);
 			System.out.println("While looking for some drops on this " + corpse.toString() + " corpse, you were able to find "
-					+ corpse.getGold() + "golds.");
+					+ corpse.getGold() + " golds.");
 		}
 
 		while (room.getItems().size() > 0) {
